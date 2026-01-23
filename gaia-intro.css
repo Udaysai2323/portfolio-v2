@@ -22,9 +22,12 @@ body {
 .gaia-intro {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: auto;
     overflow: hidden;
 }
+
+
 
 .ai-grid {
     position: absolute;
@@ -387,4 +390,19 @@ body {
 }
 
 
+@media (max-width: 768px) and (pointer: coarse) {
 
+    body {
+        overflow-y: auto;
+    }
+
+    .intro-center {
+        margin-top: clamp(40px, 10vh, 80px);
+        margin-bottom: clamp(40px, 12vh, 100px);
+    }
+
+    .system-log {
+        max-height: 35vh;
+        overflow: hidden;
+    }
+}
