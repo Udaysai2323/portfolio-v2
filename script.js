@@ -246,16 +246,3 @@ window.addEventListener('scroll', () => {
     });
 });
 
-document.querySelectorAll(".gaia-link").forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = this.href;
-
-        document.body.style.transition = "opacity 0.8s ease";
-        document.body.style.opacity = "0";
-
-        setTimeout(() => {
-            window.location.href = target;
-        }, 800);
-    });
-});
