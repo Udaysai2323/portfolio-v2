@@ -22,11 +22,9 @@ body {
 .gaia-intro {
     position: relative;
     width: 100vw;
-    min-height: calc(var(--vh, 1vh) * 100);
-    height: auto;
+    height: 100vh;
     overflow: hidden;
 }
-
 
 .ai-grid {
     position: absolute;
