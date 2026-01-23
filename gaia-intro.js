@@ -12,7 +12,7 @@ const LOG_LINES = [
 ];
 
 const logContainer = document.querySelector(".system-log");
-const statusText = document.querySelector(".system-status span");
+const statusText = document.querySelector(".system-status span") || null;
 const enterBtn = document.querySelector(".enter-btn");
 const skipBtn = document.querySelector(".skip-btn");
 
@@ -77,13 +77,14 @@ function enterGaia() {
 ----------------------------- */
 function autoRedirect() {
     setTimeout(() => {
-        setOnlineStatus();
+        if (!redirectTriggered) setOnlineStatus();
     }, 5200);
 
     setTimeout(() => {
-        enterGaia();
+        if (!redirectTriggered) enterGaia();
     }, 7000);
 }
+
 
 /* -----------------------------
    Mouse Parallax (Desktop only)
