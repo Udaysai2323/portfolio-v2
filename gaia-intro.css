@@ -320,30 +320,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-
-    /* Reduce HUD panel size */
-    .hud-top-left,
-    .hud-top-right {
-        width: 150px;
-        padding: 10px 12px;
-    }
-
-    .hud h4 {
-        font-size: 0.65rem;
-        letter-spacing: 1px;
-    }
-
-    .hud p {
-        font-size: 0.7rem;
-    }
-
-    /* Shrink HUD icons */
-    .hud .icon,
-    .hud svg {
-        transform: scale(0.8);
-    }
-}
 
 @media (max-width: 768px) {
 
@@ -377,3 +353,35 @@ body {
         );
     }
 }
+
+/* ===== CLEAN MOBILE HUD REMOVAL ===== */
+@media (max-width: 768px) {
+
+    /* REMOVE ALL HUD PANELS ON MOBILE */
+    .hud-top-left,
+    .hud-top-right,
+    .hud-bottom-left,
+    .hud-bottom-right {
+        display: none !important;
+    }
+
+    /* Center content properly */
+    .intro-center {
+        position: relative;
+        top: auto;
+        transform: none;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    /* Prevent bottom cut-off */
+    body {
+        overflow-y: auto;
+    }
+
+    .gaia-intro {
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
