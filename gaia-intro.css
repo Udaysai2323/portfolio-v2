@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050b17;
+    color: #e6f7ff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow: hidden;
+}
+
+
+.gaia-intro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.base-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #0b1d3a, #020611);
+    z-index: 1;
+}
+
+.grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes gridMove {
+    from { background-position: 0 0; }
+    to { background-position: 200px 200px; }
+}
+
+.hud-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0,255,255,0.08), transparent 60%);
+    animation: pulseHUD 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+@keyframes pulseHUD {
+    0%,100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.ai-objects i {
+    position: absolute;
+    color: rgba(0,255,255,0.6);
+    font-size: 1.5rem;
+    animation: floatAI 10s ease-in-out infinite;
+}
+
+.ai-objects i:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.ai-objects i:nth-child(2) { top: 70%; left: 20%; animation-delay: 2s; }
+.ai-objects i:nth-child(3) { top: 30%; right: 15%; animation-delay: 4s; }
+.ai-objects i:nth-child(4) { bottom: 25%; right: 20%; animation-delay: 6s; }
+.ai-objects i:nth-child(5) { top: 50%; left: 50%; animation-delay: 8s; }
+
+@keyframes floatAI {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.intro-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.gaia-title {
+    font-size: 4rem;
+    letter-spacing: 8px;
+    color: #00eaff;
+    text-shadow: 0 0 25px rgba(0,234,255,0.8);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 10px #00eaff; }
+    to { text-shadow: 0 0 30px #00eaff; }
+}
+
+.gaia-fullform {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.85;
+}
+
+.system-log {
+    margin-top: 30px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.system-log p {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.loader {
+    margin: 25px auto;
+    width: 100%;
+    max-width: 320px;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.loader-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00eaff, #0077ff);
+    animation: loadBar 6s ease forwards;
+}
+
+@keyframes loadBar {
+    to { width: 100%; }
+}
+
+.intro-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-enter, .btn-skip {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-enter {
+    background: #00eaff;
+    color: #001018;
+    box-shadow: 0 0 15px rgba(0,234,255,0.8);
+}
+
+.btn-enter:hover {
+    transform: scale(1.05);
+}
+
+.btn-skip {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #e6f7ff;
+}
+
+.btn-skip:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+
+    .gaia-title {
+        font-size: 2.4rem;
+        letter-spacing: 4px;
+    }
+
+    .gaia-fullform {
+        font-size: 0.75rem;
+    }
+
+    .system-log {
+        font-size: 0.75rem;
+    }
+
+    /* Reduce animation load on mobile */
+    .grid-bg,
+    .hud-bg {
+        animation: none;
+        opacity: 0.6;
+    }
+
+    .ai-objects i {
+        font-size: 1.1rem;
+        opacity: 0.4;
+    }
+}
