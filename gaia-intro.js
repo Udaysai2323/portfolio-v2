@@ -131,3 +131,13 @@ document.querySelectorAll(".gaia-link").forEach(link => {
         }, 800);
     });
 });
+
+function setRealViewportHeight() {
+    document.documentElement.style.setProperty(
+        '--vh',
+        `${window.innerHeight * 0.01}px`
+    );
+}
+
+setRealViewportHeight();
+window.addEventListener('resize', setRealViewportHeight);
