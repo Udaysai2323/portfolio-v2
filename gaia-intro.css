@@ -242,3 +242,81 @@ body {
         opacity: 0.4;
     }
 }
+
+/* ===============================
+   MOBILE CINEMATIC FIXES
+   =============================== */
+@media (max-width: 768px) {
+
+    /* Push content slightly upward */
+    .intro-center {
+        top: 45%;
+        transform: translateY(-45%);
+        padding: 16px;
+    }
+
+    /* Reduce title size */
+    .gaia-title {
+        font-size: 2.4rem;
+        letter-spacing: 4px;
+    }
+
+    .gaia-subtitle {
+        font-size: 0.75rem;
+        margin-top: 6px;
+    }
+
+    /* System logs tighter */
+    .system-log {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-top: 20px;
+    }
+
+    /* Progress bar slightly lower */
+    .progress-wrapper {
+        margin-top: 18px;
+        margin-bottom: 14px;
+    }
+
+    /* Buttons feel grounded */
+    .intro-actions {
+        margin-top: 22px;
+    }
+
+    .btn {
+        padding: 12px 26px;
+        font-size: 0.85rem;
+    }
+
+    /* HUD panels repositioned */
+    .hud-top-left,
+    .hud-top-right {
+        top: 70px; /* avoids browser UI */
+        width: 160px;
+        padding: 10px;
+    }
+
+    .hud h4 {
+        font-size: 0.65rem;
+    }
+
+    /* Hide bottom HUD (keep clean) */
+    .hud-bottom-left,
+    .hud-bottom-right {
+        display: none;
+    }
+
+    /* Reduce grid intensity */
+    .ai-grid {
+        background-size: 80px 80px;
+        opacity: 0.5;
+    }
+
+    /* Disable mouse-based effects */
+    .scan-line {
+        animation: none;
+        opacity: 0.35;
+    }
+}
+
