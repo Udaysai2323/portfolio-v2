@@ -355,9 +355,9 @@ body {
 }
 
 /* ===== CLEAN MOBILE HUD REMOVAL ===== */
-@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+@media (max-width: 768px) {
 
-    /* REMOVE HUD ONLY ON REAL MOBILE */
+    /* REMOVE ALL HUD PANELS ON MOBILE */
     .hud-top-left,
     .hud-top-right,
     .hud-bottom-left,
@@ -374,7 +374,7 @@ body {
         margin-bottom: 60px;
     }
 
-    /* Allow scrolling on mobile */
+    /* Prevent bottom cut-off */
     body {
         overflow-y: auto;
     }
