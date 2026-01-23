@@ -320,3 +320,60 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+
+    /* Reduce HUD panel size */
+    .hud-top-left,
+    .hud-top-right {
+        width: 150px;
+        padding: 10px 12px;
+    }
+
+    .hud h4 {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .hud p {
+        font-size: 0.7rem;
+    }
+
+    /* Shrink HUD icons */
+    .hud .icon,
+    .hud svg {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .system-log {
+        max-height: 170px;
+        overflow: hidden;
+        font-size: 0.75rem;
+        line-height: 1.45;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .intro-actions {
+        margin-top: 26px;
+        padding-bottom: 24px;
+    }
+
+    .intro-actions::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 60%;
+        margin: 0 auto 18px;
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgba(0, 200, 255, 0.6),
+            transparent
+        );
+    }
+}
